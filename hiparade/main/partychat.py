@@ -7,7 +7,7 @@ import settings
 
 @worker_process_init.connect
 def client_start(signal=None, sender=None):
-    partyClient = Client(settings.GCHAT_USER, settings.GCHAT_PASS, received, settings.GHCAT_ROOMS)
+    partyClient = Client(settings.GCHAT_USER, settings.GCHAT_PASS, received, settings.GCHAT_ROOMS)
     # give the surrogate something to hold on to.
     Surrogate.set(partyClient)
     # kick off the xmpp client
