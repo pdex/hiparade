@@ -1,0 +1,3 @@
+#!/bin/bash
+
+celerymon -A hiparade.celery

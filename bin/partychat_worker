@@ -1,0 +1,3 @@
+#!/bin/bash
+
+celery -A hiparade.main.partychat worker -c1 -Q partychat -n partychat --loglevel=info

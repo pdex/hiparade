@@ -1,0 +1,3 @@
+#!/bin/bash
+
+celery -A hiparade.main.hipchat worker -c1 -Q hipchat -n hipchat --loglevel=info
