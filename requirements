@@ -1,0 +1,12 @@
+#celery
+Celery
+flower
+pymongo
+
+# sleekxmpp
+sleekxmpp
+dnspython
+
+# python-hipchat
+#git+https://github.com/tagged/python-hipchat
+#configobj
