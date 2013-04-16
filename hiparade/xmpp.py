@@ -32,6 +32,8 @@ class Client(ClientXMPP):
         jid = self.rooms_by_name.get(room, None)
         if jid is not None:
             self.send_message(mto=jid, mbody=msg)
+        else:
+            logging.warning("Couldn't find jid for room %s", room)
 
 
 class MucClient(Client):
@@ -86,3 +88,5 @@ class MucClient(Client):
                 mbody=msg,
                 mtype='groupchat'
             )
+        else:
+            logging.warning("Couldn't find jid for room %s", room)
