@@ -31,7 +31,7 @@ class Client(ClientXMPP):
     def send_to_room(self, room, msg):
         jid = self.rooms_by_name.get(room, None)
         if jid is not None:
-            self.send_message(mto=jid, mbody=msg)
+            self.send_message(mto=jid, mbody=msg, mtype='chat')
         else:
             logging.warning("Couldn't find jid for room %s", room)
 
