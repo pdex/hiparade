@@ -15,7 +15,6 @@ class Surrogate:
 @celery.task
 def received(room, msg):
     celery.send_task('hiparade.tasks.partychat.send', (room, msg))
-    print room, msg
 
 @celery.task(base=XmppTask, client_surrogate=Surrogate)
 def send(room, msg):
