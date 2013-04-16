@@ -20,6 +20,8 @@ class Client(ClientXMPP):
             room = self.rooms.get(msg['from'].bare, None)
             if room is not None:
                 self.on_receive(room, msg['body'])
+                if msg['body'].find('invited you to') != -1:
+                    self.send_message(mto=msg['from'].bare, mbody='/alias hp', mtype='chat')
 
     def start(self):
         self.connect()
